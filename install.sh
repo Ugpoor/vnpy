@@ -14,7 +14,7 @@ $python -m pip install --upgrade pip wheel --index $pypi_index
 function install-ta-lib()
 {   
     # install numpy first
-    $python -m pip install numpy==1.23.1 --index $pypi_index
+    $python -m pip install numpy==1.23.1 --index https://pypi.org/simple
 
     pushd /tmp
     wget https://pip.vnpy.com/colletion/ta-lib-0.6.3-src.tar.gz
@@ -25,7 +25,7 @@ function install-ta-lib()
     make install
     popd
 
-    $python -m pip install ta-lib==0.6.3 --index $pypi_index
+    $python -m pip install ta-lib==0.6.3 --index https://pypi.org/simple
 }
 function ta-lib-exists()
 {
