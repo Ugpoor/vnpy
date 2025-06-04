@@ -14,7 +14,7 @@ $python -m pip install --upgrade pip wheel --index $pypi_index
 function install-ta-lib()
 {   
     # install numpy first
-    $python -m pip install numpy==1.23.1 --index https://pypi.org/simple
+    $python -m pip install numpy==1.23.1 --index $pypi_index
 
     pushd /tmp
     wget https://pip.vnpy.com/colletion/ta-lib-0.6.3-src.tar.gz
@@ -25,7 +25,7 @@ function install-ta-lib()
     make install
     popd
 
-    $python -m pip install ta-lib==0.6.3 --index https://pypi.org/simple
+    $python -m pip install ta-lib==0.6.3 --index $pypi_index
 }
 function ta-lib-exists()
 {
@@ -35,9 +35,6 @@ ta-lib-exists || install-ta-lib
 
 # Install local Chinese language environment
 locale-gen zh_CN.GB18030
-
-# 使用官方PyPI源安装PySide6
-$python -m pip install pyside6>=6.8.2.1 --index https://pypi.org/simple
 
 # Install VeighNa
 $python -m pip install . --index $pypi_index
