@@ -8,13 +8,13 @@ shift 2
 [[ -z $python ]] && python=python3
 [[ -z $pypi_index ]] && pypi_index=https://pypi.vnpy.com
 
-$python -m pip install --upgrade pip wheel
+$python -m pip install --upgrade pip wheel --index $pypi_index
 
 # Get and build ta-lib
 function install-ta-lib()
 {   
     # install numpy first
-    $python -m pip install numpy==1.23.1
+    $python -m pip install numpy==1.23.1 --index $pypi_index
 
     pushd /tmp
     wget https://pip.vnpy.com/colletion/ta-lib-0.6.3-src.tar.gz
@@ -76,7 +76,7 @@ ta-lib-exists || install-ta-lib
 locale-gen zh_CN.GB18030
 
 # Install PySide6 latest version
-$python -m pip install pyside6
+$python -m pip install pyside6>6.8.2.1
 
 # Install VeighNa
 $python -m pip install .
