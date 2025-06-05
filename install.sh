@@ -8,13 +8,13 @@ shift 2
 [[ -z $python ]] && python=python3
 [[ -z $pypi_index ]] && pypi_index=https://pypi.vnpy.com
 
-$python -m pip install --upgrade pip wheel --index $pypi_index
+$python -m pip install --upgrade pip wheel
 
 # Get and build ta-lib
 function install-ta-lib()
 {   
     # install numpy first
-    $python -m pip install numpy==1.23.1 --index $pypi_index
+    $python -m pip install numpy==1.23.1
 
     pushd /tmp
     wget https://pip.vnpy.com/colletion/ta-lib-0.6.3-src.tar.gz
@@ -25,7 +25,7 @@ function install-ta-lib()
     make install
     popd
 
-    $python -m pip install ta-lib==0.6.3 --index $pypi_index
+    $python -m pip install ta-lib==0.6.3
 }
 function ta-lib-exists()
 {
