@@ -75,8 +75,5 @@ ta-lib-exists || install-ta-lib
 # Install local Chinese language environment
 locale-gen zh_CN.GB18030
 
-# Install PySide6 latest version
-$python -m pip install pyside6>=6.8.2.1
-
 # Install VeighNa
-$python -m pip install .
+$python -m pip install . --index $pypi_index
