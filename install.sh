@@ -62,7 +62,7 @@ function install-ta-lib()
     make install
     popd
 
-    $python -m pip install ta-lib==0.6.3 --index $pypi_index
+    $python -m pip install ta-lib==0.6.3
 }
 
 function ta-lib-exists()
