@@ -79,4 +79,4 @@ locale-gen zh_CN.GB18030
 $python -m pip install pyside6
 
 # Install VeighNa
-$python -m pip install . --index $pypi_index
+$python -m pip install .
